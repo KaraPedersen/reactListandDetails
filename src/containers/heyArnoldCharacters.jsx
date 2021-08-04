@@ -1,31 +1,26 @@
 import React, { Component } from 'react';
-import Character from '../components/characters/Characters';
+import CharacterList from '../components/characters/CharacterList';
 import { fetchCharacters } from '../services/heyArnoldApi';
 
 export default class HeyArnoldCharacters extends Component {
   state ={
-    name: '',
-    image: '',
+    loading: true,
+    characters: [],
+    // name: '',
+    // image: '',
   };
 
-  getCharacters = async () => {
-    const { name, image } = await fetchCharacters();
-    this.setState({ name, image });
-    console.log(this.state);
-  };
-
-  componentDidMount() {
-    this.getCharacters();
+  async componentDidMount() {
+    const characters = await fetchCharacters();
+    this.setState({ characters, loading: false });
   }
 
   render() {
-    const { name, image } = this.state;
-    return (
-      <>
-        <h1>Characters</h1>
-        <Character name={name} image={Image}
-        />
-      </>  
-    );
+    const { loading, characters } = this.state;
+    if(loading) {
+      return <img src="https://i.imgur.com/B8SSY5p.gif" alt="loading" />;
+    }
+    
+    return <CharacterList characters={characters} />;
   }
 }
