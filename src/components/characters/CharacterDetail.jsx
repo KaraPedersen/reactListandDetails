@@ -1,37 +1,19 @@
 import React from 'react';
-import { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Character from './Characters';
-import { fetchCharacters } from '../../services/heyArnoldApi';
+import PropTypes from 'prop-types';
 
-export default class CharacterDetailPage extends Component {
-  state = {
-    character: null
-  }
+const CharacterDetail = ({ image, name }) => (
+  <figure aria-label="individual" role="individual">
+    <img src={image} alt={name} />
+    <h3>{name}</h3>
+  </figure>
+);
 
-  async componentDidMount() {
-    const { match } = this.props;
-    try {
-      const character = await fetchCharacters(match.params.id);
-      this.setState({ character });
-    } catch(err) {
-      console.log(err.message);
-    }
-  }
+CharacterDetail.propTypes = {
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};
 
-  render() {
-    const { character } = this.state;
-      
-    return (
-      <div className="characterDetailPage">
-        <h2>Character Detail Page</h2>
-        <Character
-          Id={character.id}
-          Name={character.image}
-          Image={character.image}
-        />
-        <Link to="/">Back</Link>
-      </div>
-    );
-  }
-}
+export default CharacterDetail;
+
+  
