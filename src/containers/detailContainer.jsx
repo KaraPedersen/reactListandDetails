@@ -34,6 +34,5 @@ export default class CharacterDetailPage extends Component {
       image={character.image}
       id={character.id}
     />;
-
   }
 }

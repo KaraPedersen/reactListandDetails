@@ -11,8 +11,7 @@ const Character = ({ id, name, image }) => (
 
 Character.propTypes = {
   name: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired
+  image: PropTypes.string.isRequired
 };
 
 export default Character;
