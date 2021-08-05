@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React, { Component } from 'react';
 import CharacterDetail from '../components/Characters/CharacterDetail';
 import { fetchCharacterById } from '../services/heyArnoldApi.js';
@@ -28,6 +27,7 @@ export default class CharacterDetailPage extends Component {
   render() {
     const { loading, character } = this.state;
 
+    // eslint-disable-next-line max-len
     if(loading) return <img src="https://i.imgur.com/B8SSY5p.gif" alt="loading" />;
     return <CharacterDetail
       name={character.name}

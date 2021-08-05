@@ -3,11 +3,9 @@ import CharacterList from '../components/Characters/CharacterList';
 import { fetchCharacters } from '../services/heyArnoldApi';
 
 export default class HeyArnoldCharacters extends Component {
-  state ={
+  state = {
     loading: true,
     characters: [],
-    // name: '',
-    // image: '',
   };
 
   async componentDidMount() {
@@ -17,10 +15,11 @@ export default class HeyArnoldCharacters extends Component {
 
   render() {
     const { loading, characters } = this.state;
+
     if(loading) {
       return <img src="https://i.imgur.com/B8SSY5p.gif" alt="loading" />;
     }
-    
+
     return <CharacterList characters={characters} />;
   }
 }
