@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Character = ({ name, image }) => (
+const Character = ({ name, image, _id }) => (
   <section>
-    <h2>{name}</h2>
-    <img src={image} alt={name} />
+    <p>{name}</p>
+    <img src={image} />
+    <p>{_id}</p>
   </section>
 );
 
 Character.propTypes = {
-  name: PropTypes.string,
-  image: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  _id: PropTypes.string.isRequired,
 };
 
 export default Character;

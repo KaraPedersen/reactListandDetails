@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CharacterList from '../components/characters/CharacterList';
+import CharacterList from '../components/Characters/CharacterList';
 import { fetchCharacters } from '../services/heyArnoldApi';
 
 export default class HeyArnoldCharacters extends Component {
