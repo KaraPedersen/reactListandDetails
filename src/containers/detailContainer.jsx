@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CharacterDetail from '../components/Characters/CharacterDetail';
+import CharacterDetail from '../components/characters/CharacterDetail.jsx';
 import { fetchCharacterById } from '../services/heyArnoldApi.js';
 
 export default class CharacterDetailPage extends Component {

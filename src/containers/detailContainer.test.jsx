@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import CharacterDetailPage from '../containers/detailContainer.jsx';
+import CharacterDetailPage from './DetailContainer.jsx';
 import { MemoryRouter } from 'react-router';
 
 describe('CharacterDetailContainer', () => {
