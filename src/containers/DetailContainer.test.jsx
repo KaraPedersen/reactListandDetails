@@ -1,13 +1,13 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import CharacterDetailPage from './DetailContainer.jsx';
+import DetailContainer from './DetailContainer';
 import { MemoryRouter } from 'react-router';
 
-describe('CharacterDetailContainer', () => {
+describe('DetailContainer', () => {
   it('renders a character to the page', async () => {
 
     render(<MemoryRouter>
-      <CharacterDetailPage
+      <DetailContainer
         match={{
           params: {
             id: '5da237699734fdcb7bef8f51'
