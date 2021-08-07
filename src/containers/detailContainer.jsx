@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CharacterDetail from '../components/characters/CharacterDetail';
 import { fetchCharacterById } from '../services/heyArnoldApi.js';
 
-export default class CharacterDetailPage extends Component {
+export default class DetailContainer extends Component {
   _isMounted = false;
 
   state = {
