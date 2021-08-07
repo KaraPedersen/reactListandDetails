@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CharacterDetail from '../components/Characters/CharacterDetail';
+import CharacterDetail from '../components/characters/CharacterDetail';
 import { fetchCharacterById } from '../services/heyArnoldApi.js';
 
 export default class CharacterDetailPage extends Component {
@@ -15,6 +15,7 @@ export default class CharacterDetailPage extends Component {
 
     this.setState({
       loading: false,
+      // eslint-disable-next-line react/prop-types
       character: await fetchCharacterById(this.props.match.params.id),
     });
   }
@@ -34,5 +35,6 @@ export default class CharacterDetailPage extends Component {
       image={character.image}
       id={character.id}
     />;
+
   }
 }
